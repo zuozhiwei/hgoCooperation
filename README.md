@@ -1,3 +1,11 @@
+### HehutGo admin system
+> the project is created for the hgo team.
+it uses tp5 to build
+
+
+
+
+
 ThinkPHP 5.0
 ===============
 
