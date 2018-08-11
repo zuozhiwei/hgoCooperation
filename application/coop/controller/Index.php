@@ -1,20 +1,23 @@
 <?php
 namespace app\coop\controller;
 
-class Index
+use think\Controller;
+use app\coop\model\User;
+
+class Index extends Controller
 {
     public function index()
     {
-        $this->display();
+        return view();
     }
 
     public function loginPage() {
-        $this->display();
+        return view();
     }
 
     public function login() {
-        $loginName = input(post.loginName);
-        $password = input(post.password);
+        $loginName = input("post.loginName");
+        $password = input("post.password");
 
         $where = array(
             "login_name"=>$loginName,
