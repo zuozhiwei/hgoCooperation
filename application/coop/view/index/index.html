@@ -5,7 +5,12 @@
 </head>
 <body>
 主页测试
-<a href="Index/loginPage">登录按钮</a>
+
+{if condition="isset($user)"}{$user.id} {$user.name}
+{else /} 
+<a href="coop/Index/loginPage">登录按钮</a>
+
+{/if}
 </body>
 
 </html>

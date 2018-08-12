@@ -6,29 +6,40 @@ use app\coop\model\User;
 
 class Index extends Controller
 {
+    /**
+     * 展示首页
+     */
     public function index()
     {
         return view();
     }
 
+    /**
+     * 展示登录页面
+     */
     public function loginPage() {
         return view();
     }
 
+    /**
+     * 登录操作
+     */
     public function login() {
+        ## 获取参数
         $loginName = input("post.loginName");
         $password = input("post.password");
 
+        ## 构造查询条件
         $where = array(
             "login_name"=>$loginName,
             "password"=>$password
         );
-        // 使用数组查询
+
+        ## 调用模型进行查询
         $user = User::get($where);
 
         if ($user) {
-            $this->assign($user);
-            $this->success("登录成功","Index/index");
+            return view("index",array("user"=>$user));
         } else {
             $this->error("用户名或密码错误");
         }
