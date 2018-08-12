@@ -3,8 +3,9 @@ namespace app\coop\controller;
 
 use think\Controller;
 use app\coop\model\User;
+use think\session;
 
-class Index extends Controller
+class IndexController extends Controller
 {
     /**
      * 展示首页
@@ -39,6 +40,7 @@ class Index extends Controller
         $user = User::get($where);
 
         if ($user) {
+            session("user",$user);
             return view("index",array("user"=>$user));
         } else {
             $this->error("用户名或密码错误");
