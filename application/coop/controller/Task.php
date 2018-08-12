@@ -3,10 +3,10 @@ namespace app\coop\controller;
 
 use think\Controller;
 use app\coop\model\User;
-use app\coop\model\Task;
+use app\coop\model\Task as TaskModel;
 use think\session;
 
-class TaskController extends Controller
+class Task extends Controller
 {
     /**
      * 任务首页
@@ -18,7 +18,7 @@ class TaskController extends Controller
 
         );
         # 获取任务列表和用户列表
-        $taskList = Task::all($where);
+        $taskList = TaskModel::all($where);
         $userList = User::where()->field("id,name");
         # 循环处理
         foreach ($taskList as &$task) {
