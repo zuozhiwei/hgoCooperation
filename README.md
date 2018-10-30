@@ -2,7 +2,11 @@
 > the project is created for the hgo team.
 it uses tp5 to build
 
-
+### 功能模块
+1. 登录注册
+2. 首页展示（最新三个项目，最近五个任务）
+3. 任务视图（项目为单位的任务列表，增删改查）
+4. 接口文档视图（以项目为单位的接口文档，查看）
 
 
 
